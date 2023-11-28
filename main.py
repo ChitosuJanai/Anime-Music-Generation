@@ -901,7 +901,7 @@ def convert_to_midi(prediction_output):
     midi_stream.write('midi', fp='test_output.mid')
 
 
-def convertToPrediction(file):
+def convertToPrediction(file, notecount):
     with st.spinner(f"Transcribing to FluidSynth"):
         notes_array = read_midi(file)
         no_of_timesteps = 32
@@ -928,7 +928,7 @@ def convertToPrediction(file):
 
         # Generate variations or enhance the selected music
         variations = []
-        for i in range(60):
+        for i in range(notecount):
             selected_music_reshaped = selected_music.reshape(
                 1, no_of_timesteps)
 
@@ -969,6 +969,8 @@ file = st.file_uploader("Upload a midi", type="mid",
                         accept_multiple_files=False)
 if file is not None:
     st.write("File uploaded")
+    notes_count = st.slider(
+        'Select how many notes that you want to generate', 30, 360, 60)
     st.write("Generating music...")
     bytes_data = file.getvalue()
     # st.write(bytes_data)
@@ -977,4 +979,4 @@ if file is not None:
     # string_data = stringio.read()
     # st.write(string_data)
 
-    convertToPrediction(bytes_data)
+    convertToPrediction(bytes_data, notes_count)
