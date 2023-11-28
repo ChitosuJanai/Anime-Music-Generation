@@ -1,0 +1,10 @@
+streamlit
+pandas 
+numpy 
+tensorflow
+music21
+collections
+io
+pretty-midi
+scipy.io
+os
