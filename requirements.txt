@@ -6,5 +6,6 @@ music21
 collections
 io
 pretty-midi
-scipy.io
+scipy
 os
+pyfluidsynth
