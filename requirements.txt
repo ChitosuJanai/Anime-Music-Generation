@@ -3,9 +3,6 @@ music21==6.3.0
 pandas 
 numpy 
 tensorflow
-collections
-io
 pretty-midi
 scipy
-os
 pyfluidsynth
