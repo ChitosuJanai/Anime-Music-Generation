@@ -2,7 +2,7 @@ streamlit
 pandas 
 numpy 
 tensorflow
-music21
+music21==6.3.0
 collections
 io
 pretty-midi
