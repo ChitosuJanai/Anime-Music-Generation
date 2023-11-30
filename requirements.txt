@@ -1,5 +1,5 @@
 streamlit
-music21==6.3.0
+music21==9.1.0
 pandas 
 numpy 
 tensorflow
