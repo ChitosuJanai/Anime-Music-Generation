@@ -925,6 +925,7 @@ def convertToPrediction(file, notecount):
         selected_music_index = 0
 
         # You can now use the 'no' list for your selected music
+        notes_count = 0
         if len(x_int_notes) == 1:
             st.divider()
             notes_count = st.slider(
@@ -949,7 +950,7 @@ def convertToPrediction(file, notecount):
 
         # Generate variations or enhance the selected music
         variations = []
-        for i in range(notecount):
+        for i in range(notes_count):
             selected_music_reshaped = selected_music.reshape(
                 1, no_of_timesteps)
 
@@ -998,4 +999,4 @@ if file is not None:
     # string_data = stringio.read()
     # st.write(string_data)
 
-    convertToPrediction(bytes_data, notes_count)
+    convertToPrediction(bytes_data)
