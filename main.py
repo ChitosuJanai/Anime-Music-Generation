@@ -927,14 +927,21 @@ def convertToPrediction(file, notecount):
         # You can now use the 'no' list for your selected music
         if len(x_int_notes) == 1:
             st.divider()
+            notes_count = st.slider(
+                'Select how many notes that you want to generate', 30, 360, 60, step=30)
+            st.divider()
             st.write("Generating music...")
             selected_music_index = 0
         elif len(x_int_notes) > 1:
+            st.divider()
+            notes_count = st.slider(
+                'Select how many notes that you want to generate', 30, 360, 60, step=30)
             st.divider()
             st.write("Generating music...")
             selected_music_index = np.random.randint(0, (len(x_int_notes) - 1))
         else:
             print('No music found')
+            st.divider()
             st.write('Piano notes not found or corpus error.')
             return
 
@@ -984,8 +991,6 @@ file = st.file_uploader("Upload a midi", type="mid",
 if file is not None:
     st.write("File uploaded")
     st.divider()
-    notes_count = st.slider(
-        'Select how many notes that you want to generate', 30, 360, 60, step=30)
     bytes_data = file.getvalue()
     # st.write(bytes_data)
     # stringio = io.StringIO(file.getvalue().decode("utf-8"))
