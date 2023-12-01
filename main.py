@@ -901,7 +901,7 @@ def convert_to_midi(prediction_output):
     midi_stream.write('midi', fp='test_output.mid')
 
 
-def convertToPrediction(file, notecount):
+def convertToPrediction(file):
     with st.spinner(f"Transcribing to FluidSynth"):
         notes_array = read_midi(file)
         no_of_timesteps = 32
