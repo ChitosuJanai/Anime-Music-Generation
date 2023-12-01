@@ -991,7 +991,6 @@ file = st.file_uploader("Upload a midi", type="mid",
                         accept_multiple_files=False)
 if file is not None:
     st.write("File uploaded")
-    st.divider()
     bytes_data = file.getvalue()
     # st.write(bytes_data)
     # stringio = io.StringIO(file.getvalue().decode("utf-8"))
