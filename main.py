@@ -922,8 +922,18 @@ def convertToPrediction(file, notecount):
 
         x_int_notes = np.array(x_int_notes)
 
+        selected_music_index = 0
+
         # You can now use the 'no' list for your selected music
-        selected_music_index = np.random.randint(0, len(x_int_notes) - 1)
+        if len(x_int_notes) == 1:
+            selected_music_index = 0
+        elif len(x_int_notes) > 1:
+            selected_music_index = np.random.randint(0, (len(x_int_notes) - 1))
+        else:
+            print('No music found')
+            st.write('Piano notes not found or corpus error.')
+            return
+
         selected_music = x_int_notes[selected_music_index]
 
         # Generate variations or enhance the selected music
