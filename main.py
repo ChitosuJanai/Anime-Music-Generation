@@ -163,7 +163,7 @@ def convertToPrediction(file):
             st.divider()
             st.write("Generating music...")
             selected_music_index = 0
-        elif len(x_int_notes) > 1:
+        elif len(x_seq) > 1:
             st.divider()
             notes_count = st.slider(
                 'Select how many notes that you want to generate', 30, 360, 60, step=30)
