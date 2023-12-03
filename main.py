@@ -171,7 +171,7 @@ def convertToPrediction(file):
         else:
             print('No music found')
             st.divider()
-            st.write('Piano notes not found or corpus error.')
+            st.write('Piano notes not found.')
             return
 
         selected_music = x_seq[selected_music_index]
