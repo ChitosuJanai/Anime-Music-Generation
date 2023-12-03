@@ -156,7 +156,7 @@ def convertToPrediction(file):
 
         # You can now use the 'no' list for your selected music
         notes_count = 0
-        if len(x_int_notes) == 1:
+        if len(x_seq) == 1:
             st.divider()
             notes_count = st.slider(
                 'Select how many notes that you want to generate', 30, 360, 60, step=30)
