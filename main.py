@@ -152,8 +152,6 @@ def convertToPrediction(file):
 
         x_seq = np.array(x_seq)
 
-        selected_music_index = np.random.randint(0, len(x_seq) - 1)
-
         # You can now use the 'no' list for your selected music
         notes_count = 0
         if len(x_seq) == 1:
@@ -169,7 +167,7 @@ def convertToPrediction(file):
                 'Select how many notes that you want to generate', 30, 360, 60, step=30)
             st.divider()
             st.write("Generating music...")
-            selected_music_index = np.random.randint(0, (len(x_seq) - 1))
+            selected_music_index = np.random.randint(0, len(x_seq) - 1)
         else:
             print('No music found')
             st.divider()
